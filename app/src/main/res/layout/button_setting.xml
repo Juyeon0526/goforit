@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Button_setting">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="제품 종류"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/radio_button_notebook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="노트북"
+                        android:layout_marginBottom="10dp" />
+                    <RadioButton
+                        android:id="@+id/radio_button_cpu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CPU"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_ram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RAM"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_rom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ROM"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow>
+                <RadioGroup
+                    android:id="@+id/radio_group2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/radio_button_ssd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SSD"
+                        android:layout_marginBottom="10dp" />
+                    <RadioButton
+                        android:id="@+id/radio_button_hdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HDD"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_power"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="POWER"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_mainboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MainBoard"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                </RadioGroup>
+            </TableRow>
+        </TableLayout>
+
+
+        <TextView
+            android:id="@+id/text_View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="가격 설정"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:max="300"
+            android:progress="10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="기본 가격은 10만원입니다"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/seekBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="사용 목적"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <RadioGroup
+                    android:id="@+id/radio_group3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/radio_button_document"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="문서작업"
+                        android:layout_marginBottom="10dp" />
+                    <RadioButton
+                        android:id="@+id/radio_button_lecture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="강의"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_game"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="게임"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="영상편집"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow>
+                <RadioGroup
+                    android:id="@+id/radio_group4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/radio_button_3d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3D 그래픽"
+                        android:layout_marginBottom="10dp" />
+                    <RadioButton
+                        android:id="@+id/radio_button_program"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="프로그래밍"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"/>
+                   </RadioGroup>
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/finish"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="설정 완료"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

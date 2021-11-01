@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="검색(예시)" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="동영상(예시)"/>
+
+    <TableRow>
+        <Button
+            android:id="@+id/setting"
+            android:layout_width="160dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="30dp"
+            android:text="맞춤 설정" />
+
+        <Button
+            android:id="@+id/recommend"
+            android:layout_width="160dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="20dp"
+            android:text="추천 제품" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/notebook"
+            android:layout_height="100dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="30dp"
+            android:text="노트북"/>
+
+        <Button
+            android:id="@+id/cpu"
+            android:layout_height="100dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="20dp"
+            android:text="CPU"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/ram"
+            android:layout_height="100dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="30dp"
+            android:text="RAM"/>
+
+        <Button
+            android:id="@+id/rom"
+            android:layout_height="100dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="20dp"
+            android:text="ROM"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/hdd"
+            android:layout_height="100dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="30dp"
+            android:text="HDD"/>
+
+        <Button
+            android:id="@+id/ssd"
+            android:layout_height="100dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="20dp"
+            android:text="SSD"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/power"
+            android:layout_height="100dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="30dp"
+            android:text="POWER"/>
+
+        <Button
+            android:id="@+id/mainboard"
+            android:layout_height="100dp"
+            android:backgroundTint="#018786"
+            android:layout_marginLeft="20dp"
+            android:text="Main Board"/>
+    </TableRow>
+    </TableLayout>
+</ScrollView>
