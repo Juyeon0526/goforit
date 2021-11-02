@@ -20,7 +20,7 @@
         <activity android:name=".Button_notebook"/>
         <activity android:name=".Button_cpu" />
         <activity android:name=".Button_ram"/>
-        <activity android:name=".Button_rom"/>
+        <activity android:name=".Button_gpu"/>
         <activity android:name=".Button_hdd"/>
         <activity android:name=".Button_ssd"/>
         <activity android:name=".Button_power"/>

@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="동영상(예시)"/>
+        android:text="동영상(예시)" />
 
     <TableRow>
         <Button
@@ -63,12 +63,12 @@
             android:text="RAM" />
 
         <Button
-            android:id="@+id/rom"
+            android:id="@+id/gpu"
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
             android:backgroundTint="#018786"
-            android:drawableTop="@drawable/rom_size"
-            android:text="ROM" />
+            android:drawableTop="@drawable/gpu_size"
+            android:text="GPU" />
     </TableRow>
 
     <TableRow>

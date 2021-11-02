@@ -1,20 +1,11 @@
 package com.cookandroid.gif;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Button_setting extends AppCompatActivity {
@@ -53,8 +44,8 @@ public class Button_setting extends AppCompatActivity {
                     case R.id.radio_button_ram:
                         selectedProduct.setText("RAM");
                         break;
-                    case R.id.radio_button_rom:
-                        selectedProduct.setText("ROM");
+                    case R.id.radio_button_gpu:
+                        selectedProduct.setText("GPU");
                         break;
                     case R.id.radio_button_hdd:
                         selectedProduct.setText("HDD");

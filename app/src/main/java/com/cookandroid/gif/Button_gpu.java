@@ -6,15 +6,15 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Button_rom extends AppCompatActivity {
+public class Button_gpu extends AppCompatActivity {
 
     private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.button_rom);
-        setTitle("ROM");
+        setContentView(R.layout.button_gpu);
+        setTitle("GPU");
 
         spinner = (Spinner)findViewById(R.id.spinner);
 

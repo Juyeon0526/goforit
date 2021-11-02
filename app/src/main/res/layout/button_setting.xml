@@ -57,10 +57,10 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="10dp"/>
                     <RadioButton
-                        android:id="@+id/radio_button_rom"
+                        android:id="@+id/radio_button_gpu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ROM"
+                        android:text="GPU"
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="10dp"/>
                 </RadioGroup>

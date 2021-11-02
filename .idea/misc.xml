@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/cpu_size.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/gpu_size.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/hdd_size.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/img_size.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/mainboard_size.xml" value="0.26979166666666665" />
@@ -15,6 +16,8 @@
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_cpu.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_recommend.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_setting.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/cpulist_item.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/fragment_all_posts.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/fragment_community.xml" value="0.25364583333333335" />
