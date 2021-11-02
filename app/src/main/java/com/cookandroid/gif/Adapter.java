@@ -54,6 +54,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CustomViewHolder> {
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         holder.prod_name.setText(arrayList.get(position).getProd_name());
         holder.price.setText(arrayList.get(position).getPrice());
+        holder.prod_info.setText(arrayList.get(position).getProd_info());
 
         Glide.with(holder.image.getContext())
                 .load("https:"+arrayList.get(position).getImgUrl())
@@ -70,6 +71,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CustomViewHolder> {
 
         TextView prod_name;
         TextView price;
+        TextView prod_info;
         ImageView image;
 
 
@@ -80,6 +82,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CustomViewHolder> {
             this.image = itemView.findViewById(R.id.image);
             this.prod_name = itemView.findViewById(R.id.prod_name);
             this.price = itemView.findViewById(R.id.price);
+            this.prod_info = itemView.findViewById(R.id.prod_info);
         }
     }
 }

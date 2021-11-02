@@ -4,6 +4,7 @@ public class Product_list {
     public String prod_name;
     public String price;
     public String img_url;
+    public String prod_info;
 
 
     public Product_list(){}
@@ -21,4 +22,6 @@ public class Product_list {
     }
 
     public String getImgUrl(){return img_url;}
+
+    public String getProd_info(){return prod_info;}
 }
