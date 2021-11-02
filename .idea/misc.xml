@@ -12,12 +12,20 @@
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/ram_size.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/rom_size.xml" value="0.26979166666666665" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/ssd_size.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/drawable/star_selector.xml" value="0.2074074074074074" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/activity_login.xml" value="0.152" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_cpu.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_gpu.xml" value="0.12335359675785208" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_hdd.xml" value="0.12335359675785208" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_mainboard.xml" value="0.12335359675785208" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_notebook.xml" value="0.12335359675785208" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_power.xml" value="0.12335359675785208" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_ram.xml" value="0.12335359675785208" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_recommend.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_setting.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/button_ssd.xml" value="0.12335359675785208" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/cpulist_item.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/fragment_all_posts.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidStudioProjects/fire1/app/src/main/res/layout/fragment_community.xml" value="0.25364583333333335" />
@@ -49,7 +57,6 @@
         <entry key="..\:/Users/82105/AndroidStudioProjects/fire1/app/src/main/res/layout/item_comment.xml" value="0.1296875" />
         <entry key="..\:/Users/82105/AndroidStudioProjects/fire1/app/src/main/res/layout/item_post.xml" value="0.8" />
         <entry key="..\:/Users/82105/AndroidStudioProjects/fire1/app/src/main/res/xml/network_security_config.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/User/StudioProjects/goforit/app/src/main/res/layout/fragment_home.xml" value="0.12335359675785208" />
       </map>
     </option>
   </component>
