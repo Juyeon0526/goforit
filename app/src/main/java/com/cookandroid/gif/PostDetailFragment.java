@@ -19,6 +19,8 @@ import com.cookandroid.gif.models.Comment;
 import com.cookandroid.gif.models.Post;
 import com.cookandroid.gif.models.User;
 import com.cookandroid.gif.viewholder.CommentViewHolder;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +28,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -133,17 +137,21 @@ public class PostDetailFragment extends Fragment {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         // Get user information
                         User user = dataSnapshot.getValue(User.class);
-                        String authorName = user.username;
+                        if (user != null) {
+                            String authorName = user.username;
 
-                        // Create new comment object
-                        String commentText = binding.fieldCommentText.getText().toString();
-                        Comment comment = new Comment(uid, authorName, commentText);
+                            // Create new comment object
+                            String commentText = binding.fieldCommentText.getText().toString();
+                            Comment comment = new Comment(uid, authorName, commentText);
 
-                        // Push the comment, it will appear in the list
-                        mCommentsReference.push().setValue(comment);
+                            // Push the comment, it will appear in the list
+                            mCommentsReference.child(String.valueOf(mAdapter.mComments.size() + 1)).setValue(comment);
 
-                        // Clear the field
-                        binding.fieldCommentText.setText(null);
+                            // Clear the field
+                            binding.fieldCommentText.setText(null);
+                        } else {
+
+                        }
                     }
 
                     @Override
@@ -154,7 +162,8 @@ public class PostDetailFragment extends Fragment {
     }
 
     public String getUid() {
-        return FirebaseAuth.getInstance().getCurrentUser().getUid();}
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
 
 
     private static class CommentAdapter extends RecyclerView.Adapter<CommentViewHolder> {
@@ -163,8 +172,8 @@ public class PostDetailFragment extends Fragment {
         private DatabaseReference mDatabaseReference;
         private ChildEventListener mChildEventListener;
 
-        private List<String> mCommentIds = new ArrayList<>();
-        private List<Comment> mComments = new ArrayList<>();
+        List<String> mCommentIds = new ArrayList<>();
+        List<Comment> mComments = new ArrayList<>();
 
         public CommentAdapter(final Context context, DatabaseReference ref) {
             mContext = context;

@@ -44,12 +44,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <Button
+                <ImageView
                     android:id="@+id/button_star"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="end"
-                    android:background="@drawable/ic_toggle_star_outline_24"
+                    android:background="@drawable/star_selector"
                      />
 
             </LinearLayout>

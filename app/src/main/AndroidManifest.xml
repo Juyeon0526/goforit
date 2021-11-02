@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GIF"
         android:networkSecurityConfig="@xml/network_security_config">
+
         <activity android:name=".Button_setting"/>
         <activity android:name=".Button_recommend"/>
         <activity android:name=".Button_notebook"/>
@@ -25,6 +26,7 @@
         <activity android:name=".Button_ssd"/>
         <activity android:name=".Button_power"/>
         <activity android:name=".Button_mainboard"/>
+        <activity android:name=".NewPostFragment"/>
 
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />

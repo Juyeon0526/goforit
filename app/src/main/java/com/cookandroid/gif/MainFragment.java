@@ -39,8 +39,8 @@ public class MainFragment extends Fragment {
                 getViewLifecycleOwner().getLifecycle()) {
             private final Fragment[] mFragments = new Fragment[]{
                     new RecentPostsFragment(),
-                    new MyPostsFragment(),
-                    new MyTopPostsFragment(),
+//                    new MyPostsFragment(),
+//                    new MyTopPostsFragment(),
             };
 
             @NonNull

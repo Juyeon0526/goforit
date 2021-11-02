@@ -15,17 +15,18 @@
             android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="20dp"
             android:layout_margin="5dp"
             android:layout_marginBottom="5dp"
-            android:text="제품 종류"/>
+            android:text="제품 종류"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TableRow>
+
                 <RadioGroup
                     android:id="@+id/radio_group"
                     android:layout_width="wrap_content"
@@ -40,39 +41,48 @@
                         android:id="@+id/radio_button_notebook"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="노트북"
-                        android:layout_marginBottom="10dp" />
+                        android:layout_marginBottom="10dp"
+                        android:checked="true"
+                        android:tag="notebooklist"
+                        android:text="노트북" />
+
                     <RadioButton
                         android:id="@+id/radio_button_cpu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CPU"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="cpulist"
+                        android:text="CPU" />
+
                     <RadioButton
                         android:id="@+id/radio_button_ram"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="RAM"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="memorylist"
+                        android:text="RAM" />
+
                     <RadioButton
                         android:id="@+id/radio_button_rom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ROM"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="gpulist"
+                        android:text="ROM" />
                 </RadioGroup>
             </TableRow>
 
             <TableRow>
+
                 <RadioGroup
                     android:id="@+id/radio_group2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginBottom="50dp"
+                    android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -82,29 +92,36 @@
                         android:id="@+id/radio_button_ssd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SSD"
-                        android:layout_marginBottom="10dp" />
+                        android:layout_marginBottom="10dp"
+                        android:tag="ssdlist"
+                        android:text="SSD" />
+
                     <RadioButton
                         android:id="@+id/radio_button_hdd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HDD"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="hddlist"
+                        android:text="HDD" />
+
                     <RadioButton
                         android:id="@+id/radio_button_power"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="POWER"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="powerlist"
+                        android:text="POWER" />
+
                     <RadioButton
                         android:id="@+id/radio_button_mainboard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="MainBoard"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="mainboard"
+                        android:text="MainBoard" />
                 </RadioGroup>
             </TableRow>
         </TableLayout>
@@ -114,11 +131,11 @@
             android:id="@+id/text_View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="20dp"
             android:layout_margin="5dp"
             android:layout_marginBottom="5dp"
-            android:text="가격 설정"/>
+            android:text="가격 설정"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -132,8 +149,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
@@ -141,9 +157,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:gravity="center"
-            android:textColor="@color/black"
             android:text="기본 가격은 10만원입니다"
             android:textAlignment="center"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/seekBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -152,16 +168,18 @@
             android:id="@+id/text3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="20dp"
             android:layout_margin="5dp"
             android:layout_marginBottom="5dp"
-            android:text="사용 목적"/>
+            android:text="사용 목적"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TableRow>
+
                 <RadioGroup
                     android:id="@+id/radio_group3"
                     android:layout_width="wrap_content"
@@ -176,33 +194,46 @@
                         android:id="@+id/radio_button_document"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="문서작업"
-                        android:layout_marginBottom="10dp" />
+                        android:layout_marginBottom="10dp"
+                        android:checked="true"
+                        android:tag="1"
+                        android:text="문서작업" />
+
                     <RadioButton
                         android:id="@+id/radio_button_lecture"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="강의"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="2"
+                        android:text="강의" />
+
                     <RadioButton
-                        android:id="@+id/radio_button_game"
+                        android:id="@+id/radio_button_game1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="게임"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="3"
+                        android:text="게임 (저)" />
+
                     <RadioButton
-                        android:id="@+id/radio_button_player"
+                        android:id="@+id/radio_button_game2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="영상편집"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:tag="4"
+                        android:text="게임저 (중)" />
+
+
+
+
                 </RadioGroup>
             </TableRow>
 
             <TableRow>
+
                 <RadioGroup
                     android:id="@+id/radio_group4"
                     android:layout_width="wrap_content"
@@ -213,20 +244,41 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
+
+                    <RadioButton
+                        android:id="@+id/radio_button_game3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:tag="5"
+                        android:text="게임 (고)" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:tag="6"
+                        android:text="영상편집" />
+
                     <RadioButton
                         android:id="@+id/radio_button_3d"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3D 그래픽"
-                        android:layout_marginBottom="10dp" />
+                        android:layout_marginBottom="10dp"
+                        android:tag="7"
+                        android:text="3D 그래픽" />
+
                     <RadioButton
                         android:id="@+id/radio_button_program"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="프로그래밍"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
-                   </RadioGroup>
+                        android:tag="8"
+                        android:text="프로그래밍" />
+                </RadioGroup>
             </TableRow>
         </TableLayout>
 
@@ -234,10 +286,9 @@
             android:id="@+id/finish"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="설정 완료"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:layout_gravity="center"/>
-
+            android:text="설정 완료" />
 
 
     </LinearLayout>
