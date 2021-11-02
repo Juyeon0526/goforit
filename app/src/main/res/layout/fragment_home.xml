@@ -34,67 +34,79 @@
     </TableRow>
 
     <TableRow>
+
         <Button
             android:id="@+id/notebook"
             android:layout_height="100dp"
-            android:backgroundTint="#018786"
             android:layout_marginLeft="30dp"
-            android:text="노트북"/>
+            android:backgroundTint="#018786"
+            android:drawableTop="@drawable/laptop_size"
+            android:text="노트북" />
 
         <Button
             android:id="@+id/cpu"
             android:layout_height="100dp"
-            android:backgroundTint="#018786"
             android:layout_marginLeft="20dp"
-            android:text="CPU"/>
+            android:backgroundTint="#018786"
+            android:drawableTop="@drawable/cpu_size"
+            android:text="CPU" />
     </TableRow>
 
     <TableRow>
+
         <Button
             android:id="@+id/ram"
             android:layout_height="100dp"
-            android:backgroundTint="#018786"
             android:layout_marginLeft="30dp"
-            android:text="RAM"/>
+            android:backgroundTint="#018786"
+            android:drawableTop="@drawable/ram_size"
+            android:text="RAM" />
 
         <Button
             android:id="@+id/rom"
             android:layout_height="100dp"
-            android:backgroundTint="#018786"
             android:layout_marginLeft="20dp"
-            android:text="ROM"/>
+            android:backgroundTint="#018786"
+            android:drawableTop="@drawable/rom_size"
+            android:text="ROM" />
     </TableRow>
 
     <TableRow>
+
         <Button
             android:id="@+id/hdd"
             android:layout_height="100dp"
-            android:backgroundTint="#018786"
             android:layout_marginLeft="30dp"
-            android:text="HDD"/>
+            android:backgroundTint="#018786"
+            android:drawableTop="@drawable/hdd_size"
+            android:text="HDD" />
 
         <Button
             android:id="@+id/ssd"
             android:layout_height="100dp"
-            android:backgroundTint="#018786"
             android:layout_marginLeft="20dp"
-            android:text="SSD"/>
+            android:backgroundTint="#018786"
+            android:drawableTop="@drawable/ssd_size"
+            android:text="SSD" />
     </TableRow>
 
     <TableRow>
+
         <Button
             android:id="@+id/power"
             android:layout_height="100dp"
-            android:backgroundTint="#018786"
             android:layout_marginLeft="30dp"
-            android:text="POWER"/>
+            android:backgroundTint="#018786"
+            android:drawableTop="@drawable/power_size"
+            android:text="POWER" />
 
         <Button
             android:id="@+id/mainboard"
             android:layout_height="100dp"
-            android:backgroundTint="#018786"
             android:layout_marginLeft="20dp"
-            android:text="Main Board"/>
+            android:backgroundTint="#018786"
+            android:drawableTop="@drawable/mainboard_size"
+            android:text="Main Board" />
     </TableRow>
     </TableLayout>
 </ScrollView>
