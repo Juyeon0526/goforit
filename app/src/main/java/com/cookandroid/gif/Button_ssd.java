@@ -61,7 +61,7 @@ public class Button_ssd extends AppCompatActivity {
                 Log.e("Fraglike", String.valueOf(databaseError.toException())); // 에러문 출력
             }
         });
-        adapter = new Adapter(arrayList, this);
+        adapter = new Adapter(arrayList, this, 0);
         recyclerView.setAdapter(adapter);
     }
 }
