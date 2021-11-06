@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="com.cookandroid.gif.MainFragment"
+        android:name="com.cookandroid.gif.listfragments.RecentPostsFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_main">
-        <action
+       <!-- <action
             android:id="@+id/action_MainFragment_to_NewPostFragment"
-            app:destination="@id/NewPostFragment" />
+            app:destination="@id/NewPostFragment" />-->
 
         <action
             android:id="@+id/action_MainFragment_to_PostDetailFragment"
@@ -27,7 +27,7 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_post_detail">
     </fragment>
-
+<!--
     <fragment
         android:id="@+id/NewPostFragment"
         android:name="com.cookandroid.gif.NewPostFragment"
@@ -38,5 +38,5 @@
             app:destination="@id/MainFragment"
             app:popUpTo="@id/MainFragment">
         </action>
-    </fragment>
+    </fragment>-->
 </navigation>

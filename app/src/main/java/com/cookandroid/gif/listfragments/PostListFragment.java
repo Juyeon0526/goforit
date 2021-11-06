@@ -1,6 +1,9 @@
 package com.cookandroid.gif.listfragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,11 +44,12 @@ public abstract class PostListFragment extends Fragment {
     private RecyclerView mRecycler;
     private LinearLayoutManager mManager;
 
-    public PostListFragment() {}
+    public PostListFragment() {
+    }
 
     @Override
-    public View onCreateView (LayoutInflater inflater, ViewGroup container,
-                              Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_all_posts, container, false);
 
@@ -64,7 +68,7 @@ public abstract class PostListFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         // Set up Layout Manager, reverse layout
-        mManager = new LinearLayoutManager(getActivity());
+        mManager = new LinearLayoutManagerWrapper(getActivity(), LinearLayoutManager.VERTICAL, false);
         mManager.setReverseLayout(true);
         mManager.setStackFromEnd(true);
         mRecycler.setLayoutManager(mManager);
@@ -97,10 +101,9 @@ public abstract class PostListFragment extends Fragment {
                         Bundle args = new Bundle();
                         args.putString(PostDetailFragment.EXTRA_POST_KEY, postKey);
 
-                        NavController navController = Navigation.findNavController(requireActivity(),
-                                R.id.nav_host_fragment);
-
-                        navController.navigate(R.id.action_MainFragment_to_PostDetailFragment, args);
+                        Intent intent = new Intent(requireActivity(), PostDetailFragment.class);
+                        intent.putExtra(PostDetailFragment.EXTRA_POST_KEY, postKey);
+                        startActivity(intent);
                     }
                 });
 
@@ -187,4 +190,23 @@ public abstract class PostListFragment extends Fragment {
 
     public abstract Query getQuery(DatabaseReference databaseReference);
 
+    public class LinearLayoutManagerWrapper extends LinearLayoutManager {
+
+        public LinearLayoutManagerWrapper(Context context) {
+            super(context);
+        }
+
+        public LinearLayoutManagerWrapper(Context context, int orientation, boolean reverseLayout) {
+            super(context, orientation, reverseLayout);
+        }
+
+        public LinearLayoutManagerWrapper(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+            super(context, attrs, defStyleAttr, defStyleRes);
+        }
+
+        @Override
+        public boolean supportsPredictiveItemAnimations() {
+            return false;
+        }
+    }
 }

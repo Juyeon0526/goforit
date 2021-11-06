@@ -1,5 +1,6 @@
 package com.cookandroid.gif;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,6 +17,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.cookandroid.gif.databinding.FragmentNewPostBinding;
 import com.cookandroid.gif.models.Post;
 import com.cookandroid.gif.models.User;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,10 +26,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class NewPostFragment extends Fragment {
+public class NewPostFragment extends Activity {
     private static final String TAG = "NewPostFragment";
     private static final String REQUIRED = "Required";
 
@@ -34,16 +39,12 @@ public class NewPostFragment extends Fragment {
 
     private FragmentNewPostBinding binding;
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentNewPostBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-    }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = FragmentNewPostBinding.inflate(LayoutInflater.from(this));
+        setContentView(binding.getRoot());
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         binding.fabSubmitPost.setOnClickListener(v -> submitPost());
@@ -67,7 +68,7 @@ public class NewPostFragment extends Fragment {
 
         // Disable button so there are no multi-posts
         setEditingEnabled(false);
-        Toast.makeText(getContext(), "Posting...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Posting...", Toast.LENGTH_SHORT).show();
 
         final String userId = getUid();
         mDatabase.child("user").child(userId).addListenerForSingleValueEvent(
@@ -80,7 +81,7 @@ public class NewPostFragment extends Fragment {
                         if (user == null) {
                             // User is null, error out
                             Log.e(TAG, "User " + userId + " is unexpectedly null");
-                            Toast.makeText(getContext(),
+                            Toast.makeText(getBaseContext(),
                                     "Error: could not fetch user.",
                                     Toast.LENGTH_SHORT).show();
                         } else {
@@ -89,7 +90,7 @@ public class NewPostFragment extends Fragment {
                         }
 
                         setEditingEnabled(true);
-                        NavHostFragment.findNavController(com.cookandroid.gif.NewPostFragment.this).navigate(R.id.action_NewPostFragment_to_MainFragment);
+                        finish();
                     }
 
                     @Override
@@ -99,8 +100,10 @@ public class NewPostFragment extends Fragment {
                     }
                 });
     }
+
     public String getUid() {
-        return FirebaseAuth.getInstance().getCurrentUser().getUid();}
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
 
     private void setEditingEnabled(boolean enabled) {
         binding.fieldTitle.setEnabled(enabled);

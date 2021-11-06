@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "806052586339",
-    "project_id": "goforit-af276",
-    "storage_bucket": "goforit-af276.appspot.com"
+    "project_number": "221131622243",
+    "firebase_url": "https://gfi-rec-default-rtdb.firebaseio.com",
+    "project_id": "gfi-rec",
+    "storage_bucket": "gfi-rec.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:806052586339:android:849b6691831c5aabf56956",
+        "mobilesdk_app_id": "1:221131622243:android:4f1ad35d3f0db4b605f556",
         "android_client_info": {
           "package_name": "com.cookandroid.gif"
         }
       },
       "oauth_client": [
         {
-          "client_id": "806052586339-i8ipig9f49fcignlb5pl2e6vemkd6cc5.apps.googleusercontent.com",
+          "client_id": "221131622243-2uuge0gk7gld7mvlr74qt6n23keeknfa.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAKdGO9i-D5PYmvzBdWqfNmWwD268BV44Q"
+          "current_key": "AIzaSyD9qFD2y2VnnfdZ38cqi27Oc6QzvVXII9Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "806052586339-i8ipig9f49fcignlb5pl2e6vemkd6cc5.apps.googleusercontent.com",
+              "client_id": "221131622243-2uuge0gk7gld7mvlr74qt6n23keeknfa.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

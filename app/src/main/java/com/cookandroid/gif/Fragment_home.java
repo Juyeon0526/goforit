@@ -1,18 +1,19 @@
 package com.cookandroid.gif;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.content.Intent;
 import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class Fragment_home extends Fragment {
 
-    Button setting, recommend, notebook, cpu, ram, rom, hdd, ssd, power, mainboard;
+    Button setting, recommend, notebook, cpu, ram, gpu, hdd, ssd, power, mainboard;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -58,11 +59,11 @@ public class Fragment_home extends Fragment {
             }
         });
 
-        rom=rootView.findViewById(R.id.rom);
-        rom.setOnClickListener(new View.OnClickListener() {
+        gpu=rootView.findViewById(R.id.gpu);
+        gpu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Button_rom.class ));
+                startActivity(new Intent(getActivity(), Button_gpu.class ));
             }
         });
 
@@ -101,4 +102,6 @@ public class Fragment_home extends Fragment {
         return rootView;
 
     }
+
+
 }

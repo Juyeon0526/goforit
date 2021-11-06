@@ -3,7 +3,6 @@ package com.cookandroid.gif;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +20,6 @@ import java.util.ArrayList;
 
 public class Button_cpu extends AppCompatActivity {
 
-    private Spinner spinner;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -61,7 +59,7 @@ public class Button_cpu extends AppCompatActivity {
                 Log.e("Fraglike", String.valueOf(databaseError.toException())); // 에러문 출력
             }
         });
-        adapter = new Adapter(arrayList, this);
+        adapter = new Adapter(arrayList, this, 0);
         recyclerView.setAdapter(adapter);
     }
 }

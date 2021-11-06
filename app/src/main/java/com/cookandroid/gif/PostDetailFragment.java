@@ -1,5 +1,6 @@
 package com.cookandroid.gif;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,8 @@ import com.cookandroid.gif.models.Comment;
 import com.cookandroid.gif.models.Post;
 import com.cookandroid.gif.models.User;
 import com.cookandroid.gif.viewholder.CommentViewHolder;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -27,12 +30,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 //import com.google.firebase.quickstart.database.R;
 
-public class PostDetailFragment extends Fragment {
+public class PostDetailFragment extends Activity {
 
     private static final String TAG = "PostDetailFragment";
 
@@ -46,19 +51,15 @@ public class PostDetailFragment extends Fragment {
 
     private FragmentPostDetailBinding binding;
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentPostDetailBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-    }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = FragmentPostDetailBinding.inflate(LayoutInflater.from(this));
+        setContentView(binding.getRoot());
 
         // Get post key from arguments
-        mPostKey = requireArguments().getString(EXTRA_POST_KEY);
+        mPostKey = getIntent().getStringExtra(EXTRA_POST_KEY);
         if (mPostKey == null) {
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }
@@ -75,8 +76,11 @@ public class PostDetailFragment extends Fragment {
                 postComment();
             }
         });
-        binding.recyclerPostComments.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerPostComments.setLayoutManager(new LinearLayoutManager(getBaseContext()));
     }
+
+
+
 
     @Override
     public void onStart() {
@@ -98,7 +102,7 @@ public class PostDetailFragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
                 // Getting Post failed, log a message
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                Toast.makeText(getContext(), "Failed to load post.",
+                Toast.makeText(getBaseContext(), "Failed to load post.",
                         Toast.LENGTH_SHORT).show();
             }
         };
@@ -108,7 +112,7 @@ public class PostDetailFragment extends Fragment {
         mPostListener = postListener;
 
         // Listen for comments
-        mAdapter = new CommentAdapter(getContext(), mCommentsReference);
+        mAdapter = new CommentAdapter(getBaseContext(), mCommentsReference);
         binding.recyclerPostComments.setAdapter(mAdapter);
     }
 
@@ -133,17 +137,21 @@ public class PostDetailFragment extends Fragment {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         // Get user information
                         User user = dataSnapshot.getValue(User.class);
-                        String authorName = user.username;
+                        if (user != null) {
+                            String authorName = user.username;
 
-                        // Create new comment object
-                        String commentText = binding.fieldCommentText.getText().toString();
-                        Comment comment = new Comment(uid, authorName, commentText);
+                            // Create new comment object
+                            String commentText = binding.fieldCommentText.getText().toString();
+                            Comment comment = new Comment(uid, authorName, commentText);
 
-                        // Push the comment, it will appear in the list
-                        mCommentsReference.push().setValue(comment);
+                            // Push the comment, it will appear in the list
+                            mCommentsReference.child(String.valueOf(mAdapter.mComments.size() + 1)).setValue(comment);
 
-                        // Clear the field
-                        binding.fieldCommentText.setText(null);
+                            // Clear the field
+                            binding.fieldCommentText.setText(null);
+                        } else {
+
+                        }
                     }
 
                     @Override
@@ -154,7 +162,8 @@ public class PostDetailFragment extends Fragment {
     }
 
     public String getUid() {
-        return FirebaseAuth.getInstance().getCurrentUser().getUid();}
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
 
 
     private static class CommentAdapter extends RecyclerView.Adapter<CommentViewHolder> {
@@ -163,8 +172,8 @@ public class PostDetailFragment extends Fragment {
         private DatabaseReference mDatabaseReference;
         private ChildEventListener mChildEventListener;
 
-        private List<String> mCommentIds = new ArrayList<>();
-        private List<Comment> mComments = new ArrayList<>();
+        List<String> mCommentIds = new ArrayList<>();
+        List<Comment> mComments = new ArrayList<>();
 
         public CommentAdapter(final Context context, DatabaseReference ref) {
             mContext = context;
